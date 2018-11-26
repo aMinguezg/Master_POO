@@ -1,0 +1,24 @@
+{
+    "ciudades": [
+      {
+        "latitude": 40.416875,
+        "longitude": -3.703308,
+        "city": "Madrid",
+        "description": "Puerta del Sol",
+        "provincias": {
+            "norte": "Alpedrete",
+            "sur": "Alcorcon"
+        }
+      },
+      {
+        "latitude": 41.416875,
+        "longitude": -4.703308,
+        "city": "Oviedo",
+        "description": "Uniovi",
+        "provincias": {
+            "norte": "Corredoria",
+            "sur": "Naranco"
+        }
+      }
+    ]
+}
