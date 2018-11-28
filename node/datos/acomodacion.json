@@ -1,0 +1,22 @@
+[
+  {
+    "@context": "http://schema.org",
+    "@type": "Accommodation",
+    "identifier": "1",
+    "name": "Gul Apartments",
+    "address": "Springfield Town Hall",
+    "review":"Apartment with great views",
+    "numberOfRooms":"4",
+    "petsAllowed":"True" 
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Accommodation",
+    "identifier": "2",
+    "name": "Hp Hotel",
+    "address": "Candem Town",
+    "review":"Hotel with great views",
+    "numberOfRooms":"50",
+    "petsAllowed":"False" 
+  }
+]
