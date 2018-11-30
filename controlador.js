@@ -1,8 +1,9 @@
 
     let eleccion;
-    let servidor = "http://localhost:3000/";
-    let entidad = "acomodacion";
-    
+    let servidor;
+    let entidad;
+    $('#divContenido').hide();
+
     $('#servidor').change(function(){
         eleccion = $('#servidor').val();
         switch(eleccion){
@@ -18,6 +19,9 @@
             default:
                 servidor = "http://localhost:3000/";
         } 
+        $('#divServidor').hide();
+        $('#divContenido').show();
+        
     });
     
     //let entidad = $('#entidad').change().val();
@@ -30,9 +34,16 @@
         }
     });
     
+    $( "#servidorBut" ).click(function() {
+          
+        $('#divContenido').hide();
+        $('#divServidor').show();
+        
+      });
+
     $( "#getAll" ).click(function() {
           
-        console.log(servidor);      
+             
           $.ajax({
             url:`${servidor}${entidad}`,
             type: 'GET',
@@ -46,7 +57,7 @@
       $( "#getId" ).submit(function() {
         let id = $("#idGet").val();
         $.ajax({
-            url:`http://localhost:3000/acomodacion/${id}`,
+            url:`${servidor}${entidad}/${id}`,
             type: 'GET',
             contentType: "application/json",
             success: function(data) {
@@ -72,7 +83,7 @@
         };
         let datos = JSON.stringify(dat);
         $.ajax({
-              url:"http://localhost:3000/acomodacion",
+              url:`${servidor}${entidad}`,
               type: 'POST',
               contentType: "application/json",
               data:datos,
@@ -99,7 +110,7 @@
         };
         let datos = JSON.stringify(dat);
         $.ajax({
-            url:`http://localhost:3000/acomodacion/${id}`,
+            url:`${servidor}${entidad}/${id}`,
             type: 'PUT',
             contentType: "application/json",
             data:datos,
@@ -112,7 +123,7 @@
       $( "#delId" ).submit(function() {
           let id = $("#idDel").val();
           $.ajax({
-              url:`http://localhost:3000/acomodacion/${id}`,
+              url:`${servidor}${entidad}/${id}`,
               type: 'DELETE',
               contentType: "application/json",
               success: function(data) {

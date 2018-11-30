@@ -8,17 +8,20 @@
 </head>
 
 <body>
-    <div>
+    <div id="divServidor">
 
         <select id="servidor">
+         <option selected="true" disabled="disabled">Seleccione un servidor</option>
          <option value="node">Servidor Node</option>
          <option value="php">Servidor PHP</option>
          <option value="python">Servidor Python</option>
         </select>
-
+    </div>
+    <div id="divContenido">
         <select id="entidad">
-         <option value="acomodacion">Entidad Acomodacion</option>
-         <option value="civico">Entidad Civico</option>
+         <option selected="true" disabled="disabled">Seleccione una entidad</option>
+         <option value="acomodacion">Acomodacion</option>
+         <option value="civico">Civico</option>
         </select>
     
         <textarea id="area" rows="20" cols="50"></textarea>
@@ -27,18 +30,19 @@
         <button id="postBut">Añadir</button>
         <button id="putBut">Modificar</button>
         <button id="deleteBut">Eliminar</button>
+        <button id="servidorBut">Cambiar de servidor</button>
         
-        <form id="getId" action="#">
+        <form id="getId" onsubmit="return false">
             <input type="number" id="idGet"><br>
             <input type="submit" value="Submit">
         </form><br>
         
-        <form id="delId" action="#">
+        <form id="delId" onsubmit="return false">
             <input type="number" id="idDel"><br>
             <input type="submit" value="Submit">
         </form><br> 
         
-        <form id="post" action="#">
+        <form id="post" onsubmit="return false">
             Nombre: <input type="text" id="namePost"><br>
             Dirección: <input type="text" id="addressPost"><br>
             Opinión: <input type="text" id="reviewPost"><br>
@@ -49,7 +53,7 @@
             <input type="submit" value="Submit">
         </form><br> 
 
-        <form id="put" action="#">
+        <form id="put" onsubmit="return false">
             Número del elemento: <input type="number" id="idPut"><br>
             Nombre: <input type="text" id="namePut"><br>
             Dirección: <input type="text" id="addressPut"><br>
