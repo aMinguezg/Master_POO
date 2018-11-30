@@ -60,7 +60,7 @@ next();
     res.send(civico.getAll());
   });
 
-
+ 
 
   //Parte: GET acomodacion
   app.get('/acomodacion', function(req, res, next) {
