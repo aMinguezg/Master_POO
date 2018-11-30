@@ -8,11 +8,12 @@ class Acomodacion extends lugar{
         super(identifier,name,address,review);
         this.numberOfRooms = numberOfRooms;
         this.petsAllowed = petsAllowed;
-        
     }
+
     getAll(){
         return datos;
     }
+
     
     getId(id){
         if (id > 0 && id<=datos.length){
@@ -26,7 +27,6 @@ class Acomodacion extends lugar{
     putId(id,name,address,review,numberOfRooms,petsAllowed){
         if (id > 0 && id<=datos.length){
             let posicion = id -1;
-            //datos[posicion].id = posicion;
             datos[posicion].name = name;
             datos[posicion].address = address;
             datos[posicion].review = review;
@@ -41,7 +41,6 @@ class Acomodacion extends lugar{
         let newAcom={'@context': "http://schema.org",'@type': "Accommodation",'identifier': id,'name': name, 'address': address, 'review':review, 'numberOfRooms': numberOfRooms, 'petsAllowed':petsAllowed};
         datos.push(newAcom);
         
-        
     }
     
     deleteId(id){
@@ -54,7 +53,5 @@ class Acomodacion extends lugar{
     }
     
 }
-
-
 
 module.exports = Acomodacion;

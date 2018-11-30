@@ -2,13 +2,68 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Cliente</title>
+<head>
+    <title>Hello jQuery</title>
+    
 </head>
 
 <body>
-<h1>HOLA POR AQUI VAMOS BIEN</h1>
+    <div>
 
-<a href="php/prueba.php">Veamos el php</a>
+        <select id="servidor">
+         <option value="node">Servidor Node</option>
+         <option value="php">Servidor PHP</option>
+         <option value="python">Servidor Python</option>
+        </select>
+
+        <select id="entidad">
+         <option value="acomodacion">Entidad Acomodacion</option>
+         <option value="civico">Entidad Civico</option>
+        </select>
+    
+        <textarea id="area" rows="20" cols="50"></textarea>
+        <button id="getAll">Muestra todos</button>
+        <button id="getIdBut">Muestra por Id</button>
+        <button id="postBut">Añadir</button>
+        <button id="putBut">Modificar</button>
+        <button id="deleteBut">Eliminar</button>
+        
+        <form id="getId" action="#">
+            <input type="number" id="idGet"><br>
+            <input type="submit" value="Submit">
+        </form><br>
+        
+        <form id="delId" action="#">
+            <input type="number" id="idDel"><br>
+            <input type="submit" value="Submit">
+        </form><br> 
+        
+        <form id="post" action="#">
+            Nombre: <input type="text" id="namePost"><br>
+            Dirección: <input type="text" id="addressPost"><br>
+            Opinión: <input type="text" id="reviewPost"><br>
+            Número de habitaciones: <input type="number" id="roomsPost"><br>
+            Permite mascotas:<br>
+            <input type="radio" name="pets" value="true" id="truePost"> SI<br>
+            <input type="radio" name="pets" value="false" id="falsePost"> NO<br>
+            <input type="submit" value="Submit">
+        </form><br> 
+
+        <form id="put" action="#">
+            Número del elemento: <input type="number" id="idPut"><br>
+            Nombre: <input type="text" id="namePut"><br>
+            Dirección: <input type="text" id="addressPut"><br>
+            Opinión: <input type="text" id="reviewPut"><br>
+            Número de habitaciones: <input type="number" id="roomsPut"><br>
+            Permite mascotas:<br>
+            <input type="radio" name="pets" value="true" id="truePut"> SI<br>
+            <input type="radio" name="pets" value="false" id="falsePut"> NO<br>
+            <input type="submit" value="Submit">
+        </form><br>  
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="controlador.js"></script>
 </body>
 
 </html>

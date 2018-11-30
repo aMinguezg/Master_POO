@@ -19,6 +19,16 @@
             "norte": "Corredoria",
             "sur": "Naranco"
         }
+      },
+      {
+        "latitude": 42.416875,
+        "longitude": -5.703308,
+        "city": "Barcelona",
+        "description": "Canaletas",
+        "provincias": {
+            "norte": "Pan tumaca",
+            "sur": "Agarrao"
+        }
       }
     ]
 }
