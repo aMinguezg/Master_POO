@@ -8,7 +8,7 @@
         eleccion = $('#servidor').val();
         switch(eleccion){
             case "php":
-                servidor = "http://localhost:4000/";
+                servidor = "http://localhost/poo/php/";
                 break;
             case "python":
                 servidor = "http://localhost:5000/";
@@ -38,6 +38,7 @@
           
         $('#divContenido').hide();
         $('#divServidor').show();
+        $('#area').val("");
         
       });
 
@@ -68,6 +69,7 @@
 
 
       $( "#post" ).submit(function() {
+      
         let name = $("#namePost").val();
         let add = $("#addressPost").val();
         let review = $("#reviewPost").val();
@@ -83,7 +85,33 @@
         };
         let datos = JSON.stringify(dat);
         $.ajax({
-              url:`${servidor}${entidad}`,
+              url:`${servidor}acomodacion`,
+              type: 'POST',
+              contentType: "application/json",
+              data:datos,
+              
+              success: function(data) {
+                $('#area').val(JSON.stringify(data));
+              }
+        });
+      });
+
+      $( "#postCiv" ).submit(function() {
+      
+        let name = $("#namePostCiv").val();
+        let add = $("#addressPostCiv").val();
+        let review = $("#reviewPostCiv").val();
+        let time = $("#timePostCiv").val();
+       
+        let dat ={
+            "name": name,
+            "address": add,
+            "review": review,
+            "openingHours": time
+        };
+        let datos = JSON.stringify(dat);
+        $.ajax({
+              url:`${servidor}civico`,
               type: 'POST',
               contentType: "application/json",
               data:datos,
@@ -110,7 +138,31 @@
         };
         let datos = JSON.stringify(dat);
         $.ajax({
-            url:`${servidor}${entidad}/${id}`,
+            url:`${servidor}acomodacion/${id}`,
+            type: 'PUT',
+            contentType: "application/json",
+            data:datos,
+            success: function(data) {
+                $('#area').val(JSON.stringify(data));
+            }
+          });
+      });
+
+      $( "#putCiv" ).submit(function() {
+        let id = $("#idPutCiv").val();
+        let name = $("#namePutCiv").val();
+        let add = $("#addressPutCiv").val();
+        let review = $("#reviewPutCiv").val();
+        let time = $("#timePutCiv").val();
+        let dat ={
+            "name": name,
+            "address": add,
+            "review": review,
+            "openingHours": time
+        };
+        let datos = JSON.stringify(dat);
+        $.ajax({
+            url:`${servidor}civico/${id}`,
             type: 'PUT',
             contentType: "application/json",
             data:datos,

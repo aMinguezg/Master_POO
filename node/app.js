@@ -29,7 +29,7 @@ next();
   
   //Parte: GET civico + id
   app.get('/civico/:id', function(req, res) {
-    var itemId = req.params.id;
+    let itemId = req.params.id;
     res.send(civico.getId(itemId));
   });
   
@@ -43,11 +43,11 @@ next();
 
   //PArte: PUT civico + id
   app.put('/civico/:id', function(req, res) {
-    var itemId = req.params.id;
-    var name = req.body.name;
-    var address = req.body.address;
-    var review = req.body.review;
-    var openingHours = req.body.openingHours;
+    let itemId = req.params.id;
+    let name = req.body.name;
+    let address = req.body.address;
+    let review = req.body.review;
+    let openingHours = req.body.openingHours;
     civico.putId(itemId,name,address,review,openingHours)
     res.send(civico.getId(itemId));
   });
@@ -55,7 +55,7 @@ next();
 
   //PArte: DELETE civico + id
   app.delete('/civico/:id', function(req, res) {
-    var itemId = req.params.id;
+    let itemId = req.params.id;
     civico.deleteId(itemId)
     res.send(civico.getAll());
   });
@@ -74,7 +74,7 @@ next();
   
   //Parte: GET acomodacion + id
   app.get('/acomodacion/:id', function(req, res) {
-    var itemId = req.params.id;
+    let itemId = req.params.id;
     res.send(acomoda.getId(itemId));
   });
   
@@ -89,12 +89,12 @@ next();
 
   //PArte: PUT acomodacion + id
   app.put('/acomodacion/:id', function(req, res) {
-    var itemId = req.params.id;
-    var name = req.body.name;
-    var address = req.body.address;
-    var review = req.body.review;
-    var numberOfRooms = req.body.numberOfRooms;
-    var petsAllowed = req.body.petsAllowed;
+    let itemId = req.params.id;
+    let name = req.body.name;
+    let address = req.body.address;
+    let review = req.body.review;
+    let numberOfRooms = req.body.numberOfRooms;
+    let petsAllowed = req.body.petsAllowed;
     acomoda.putId(itemId,name,address,review,numberOfRooms,petsAllowed)
     res.send(acomoda.getId(itemId));
   });
@@ -102,12 +102,12 @@ next();
 
   //PArte: DELETE acomodacion + id
   app.delete('/acomodacion/:id', function(req, res) {
-    var itemId = req.params.id;
+    let itemId = req.params.id;
     acomoda.deleteId(itemId)
     res.send(acomoda.getAll());
   });
 
   //Lanzar servidor
-  var server = app.listen(3000, function () {
+  let server = app.listen(3000, function () {
     console.log('Server is running..'); 
   });

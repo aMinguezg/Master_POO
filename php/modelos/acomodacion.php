@@ -5,16 +5,7 @@ include 'lugar.php';
 
 class Acomodacion extends Lugar{
 
-    private $numberOfRooms,$petsAllowed,$file,$json;
-    
-
-    
-    function darJson(){
-        $file= file_get_contents('datos/acomodacion.json');
-        $json = json_decode($file, true);
-        return $json;
-    }
-
+    private $numberOfRooms,$petsAllowed,$json;
     
 
     function __construct1($identifier,$name,$address,$review,$numberOfRooms,$petsAllowed){
@@ -22,11 +13,17 @@ class Acomodacion extends Lugar{
         $this->numberOfRooms = $numberOfRooms;
         $this->petsAllowed = $petsAllowed;
     }
-    function __construct(){}
+    function __construct(){
+        $file= file_get_contents('datos/acomodacion.json');
+        $this->json = json_decode($file, true);
+    }
+
+    public function getAll (){
+        return json_encode($this->json,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    }
 
     function getId($id){
-        $acom = new Acomodacion;
-        $datos = $acom->darJson();
+        $datos = $this->json;
         if ($id > 0 && $id<=sizeof($datos)){
             $posicion = $id -1;
             $jsonId = $datos[$posicion];
@@ -36,8 +33,7 @@ class Acomodacion extends Lugar{
     }
 
     function deleteId($id){
-        $acom = new Acomodacion;
-        $datos = $acom->darJson();
+        $datos = $this->json;
         if ($id > 0 && $id<=sizeof($datos)){
             $posicion = $id -1;
             unset($datos[$posicion]) ;
@@ -45,52 +41,31 @@ class Acomodacion extends Lugar{
         }
         else{echo 'id incorrecto';}
     }
-    
-    /*function getAll(){
-        
-        return $json;
-    }
 
-    
-    function getId(id){
-        if (id > 0 && id<=datos.length){
-            let posicion = id -1;
-            let jsonId = datos[posicion];
-            return jsonId;
-        }
-        else{console.log('id incorrecto');}
+    function post($name,$address,$review,$numberOfRooms,$petsAllowed){
+        $datos = $this->json;
+        $posicion = sizeof($datos); 
+        $id =sizeof($datos) + 1;
+        $ff=[$posicion =>["@context" => "http://schema.org","@type" => " Accommodation","identifier" => $id, "name" => $name, "address" => $address, "review" => $review, "numberOfRooms" => $numberOfRooms, "petsAllowed" => $petsAllowed ]];
+        $result = array_merge($datos, $ff);
+        return json_encode($result,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+       
     }
     
-    function putId(id,name,address,review,numberOfRooms,petsAllowed){
-        if (id > 0 && id<=datos.length){
-            let posicion = id -1;
-            datos[posicion].name = name;
-            datos[posicion].address = address;
-            datos[posicion].review = review;
-            datos[posicion].numberOfRooms = numberOfRooms;
-            datos[posicion].petsAllowed = petsAllowed;
+    function putId($id,$name,$address,$review,$numberOfRooms,$petsAllowed){
+        $datos = $this->json;
+        if ($id > 0 && $id<=sizeof($datos)){
+            $posicion = $id -1;
+            $datos[$posicion]["name"] = $name;
+            $datos[$posicion]["address"] = $address;
+            $datos[$posicion]["review"] = $review;
+            $datos[$posicion]["numberOfRooms"] = $numberOfRooms;
+            $datos[$posicion]["petsAllowed"] = $petsAllowed;
+            return json_encode($datos[$posicion],JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }
-        else{console.log('id incorrecto');}
+        else{echo 'id incorrecto';}
     }
-    
-    function post(name,address,review,numberOfRooms,petsAllowed){
-        let id = datos.length + 1;
-        let newAcom={'@context': "http://schema.org",'@type': "Accommodation",'identifier': id,'name': name, 'address': address, 'review':review, 'numberOfRooms': numberOfRooms, 'petsAllowed':petsAllowed};
-        datos.push(newAcom);
-        
-    }
-    
-    function deleteId(id){
-        if (id > 0 && id<=datos.length){
-            let posicion = id -1;
-            delete datos[posicion];
-            
-        }
-        else{console.log('id incorrecto');}
-    }*/
     
 }
-
-
 
 ?>

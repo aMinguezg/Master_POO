@@ -1,0 +1,5 @@
+RewriteEngine On # Turn on the rewriting engine
+RewriteRule ^acomodacion/?$ ServAcomodacion.php [NC,L]
+RewriteRule ^acomodacion/([0-9]+)/?$ ServAcomodacion.php?id=$1 [NC,L]
+RewriteRule ^civico/?$ ServCivico.php [NC,L]
+RewriteRule ^civico/([0-9]+)/?$ ServCivico.php?id=$1 [NC,L]
