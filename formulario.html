@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<head>
+    <title>Formulario de contacto</title>   
+</head>
+
+<body>
+
+        <form id="contacto" action="index.html" method="post" onSubmit="validar()">
+                Nombre: <input type="text" name="nombre" ><br>
+                Apellidos: <input type="text" name="apellidos" ><br>
+                Edad: <input type="number" name="edad" min="1" pattern="^[0-9]" ><br>
+                Email: <input type="email" name="email" ><br>
+                Telefono: <input type="tel" name="telefono" min="1" pattern="^[0-9]+" ><br>
+                Sexo:<br>
+                <input type="radio" name="sexo" value="hombre" id="hombre"> Hombre<br>
+                <input type="radio" name="sexo" value="mujer" id="mujer"> Mujer<br>
+                <textarea name="consulta" form="contacto" rows="10" cols="40" >Escribe tu consulta aquí...</textarea><br>
+                <input type="submit" value="Submit">
+        </form><br> 
+        
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="validador.js"></script>
+</body>
+
+</html>

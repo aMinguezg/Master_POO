@@ -1,7 +1,4 @@
 
-    let eleccion;
-    let servidor;
-    let entidad;
     $('#divContenido').hide();
 
     $('#servidor').change(function(){
@@ -39,6 +36,13 @@
         }
     });
     
+
+    $( "#contactoBut" ).click(function() {
+          
+        window.location.href = "formulario.html";
+        
+      });
+   
     $( "#servidorBut" ).click(function() {
           
         $('#divContenido').hide();
