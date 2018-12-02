@@ -21,7 +21,12 @@
         } 
         $('#divServidor').hide();
         $('#divContenido').show();
-        
+        $('#getId').hide();
+        $('#delId').hide();
+        $('#post').hide();
+        $('#postCiv').hide();
+        $('#put').hide();
+        $('#putCiv').hide();
     });
     
     //let entidad = $('#entidad').change().val();
@@ -42,17 +47,68 @@
         
       });
 
-    $( "#getAll" ).click(function() {
+    $( "#getAllBut" ).click(function() {
+        if(entidad == 'acomodacion' || entidad == 'civico'){
+            $.ajax({
+                url:`${servidor}${entidad}`,
+                type: 'GET',
+                contentType: "application/json",
+                success: function(data) {
+                    $('#area').val(JSON.stringify(data));
+                }
+              });
+        }
+        else{
+          alert("¡Hola! Debes seleccionar primero una entidad");
+        }
           
-             
-          $.ajax({
-            url:`${servidor}${entidad}`,
-            type: 'GET',
-            contentType: "application/json",
-            success: function(data) {
-                $('#area').val(JSON.stringify(data));
+      });
+
+      $( "#getIdBut" ).click(function() {
+          if(entidad == 'acomodacion' || entidad == 'civico'){
+            $('#getId').show(); 
+          }
+          else{
+            alert("¡Hola! Debes seleccionar primero una entidad");
+          }
+              
+      });
+      $( "#deleteBut" ).click(function() {
+        if(entidad == 'acomodacion' || entidad == 'civico'){
+            $('#delId').show();
+        }
+        else{
+          alert("¡Hola! Debes seleccionar primero una entidad");
+        }
+        
+      });
+      $( "#postBut" ).click(function() {
+        if(entidad == 'acomodacion' || entidad == 'civico'){
+            if(entidad=='acomodacion'){
+                $('#post').show();
             }
-          });
+            else{
+                $('#postCiv').show();
+            }
+        }
+        else{
+          alert("¡Hola! Debes seleccionar primero una entidad");
+        }
+        
+      });
+      $( "#putBut" ).click(function() {
+        if(entidad == 'acomodacion' || entidad == 'civico'){
+            if(entidad=='acomodacion'){
+                $('#put').show();
+            }
+            else{
+                $('#putCiv').show();
+            }
+        }
+        else{
+          alert("¡Hola! Debes seleccionar primero una entidad");
+        }
+        
       });
 
       $( "#getId" ).submit(function() {
@@ -73,6 +129,8 @@
                 $('#area').val(JSON.stringify(data));
             }
           });
+        $('#getId').hide();
+        $('#idGet').val("");
       });
 
 
@@ -102,6 +160,11 @@
                 $('#area').val(JSON.stringify(data));
               }
         });
+        $('#post').hide();
+        $("#namePost").val("");
+        $("#addressPost").val("");
+        $("#reviewPost").val("");
+        $("#roomsPost").val("");
       });
 
       $( "#postCiv" ).submit(function() {
@@ -128,6 +191,11 @@
                 $('#area').val(JSON.stringify(data));
               }
         });
+        $('#postCiv').hide();
+        $("#namePostCiv").val("");
+        $("#addressPostCiv").val("");
+        $("#reviewPostCiv").val("");
+        $("#timePostCiv").val("");
       });
 
       $( "#put" ).submit(function() {
@@ -162,6 +230,12 @@
                 $('#area').val(JSON.stringify(data));
             }
           });
+          $('#put').hide();
+          $("#idPut").val("");
+          $("#namePut").val("");
+          $("#addressPut").val("");
+          $("#reviewPut").val("");
+          $("#roomsPut").val("");
       });
 
       $( "#putCiv" ).submit(function() {
@@ -194,6 +268,12 @@
                 $('#area').val(JSON.stringify(data));
             }
           });
+          $('#putCiv').hide();
+          $("#idPutCiv").val("");
+          $("#namePutCiv").val("");
+          $("#addressPutCiv").val("");
+          $("#reviewPutCiv").val("");
+          $("#timePutCiv").val("");
       });
 
       $( "#delId" ).submit(function() {
@@ -214,5 +294,7 @@
                   $('#area').val(JSON.stringify(data));
               }
             });
+        $('#delId').hide();
+        $('#idDel').val("");
       });
     

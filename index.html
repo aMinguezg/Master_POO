@@ -18,20 +18,22 @@
         </select>
     </div>
     <div id="divContenido">
-        <select id="entidad">
-         <option selected="true" disabled="disabled">Seleccione una entidad</option>
-         <option value="acomodacion">Acomodacion</option>
-         <option value="civico">Civico</option>
-        </select>
+        
     
         <textarea id="area" rows="20" cols="50"></textarea>
-        <button id="getAll">Muestra todos</button>
+        <button id="getAllBut">Muestra todos</button>
         <button id="getIdBut">Muestra por Id</button>
         <button id="postBut">Añadir</button>
         <button id="putBut">Modificar</button>
         <button id="deleteBut">Eliminar</button>
         <button id="servidorBut">Cambiar de servidor</button>
         
+        <select id="entidad">
+            <option selected="true" disabled="disabled">Seleccione una entidad</option>
+            <option value="acomodacion">Acomodacion</option>
+            <option value="civico">Civico</option>
+        </select>
+
         <form id="getId" onsubmit="return false">
             <input type="number" id="idGet"><br>
             <input type="submit" value="Submit">
