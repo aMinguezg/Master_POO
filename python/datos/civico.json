@@ -1,0 +1,20 @@
+[
+  {
+    "@context": "http://schema.org",
+    "@type": "CivicStructure",
+    "identifier": "1",
+    "name": "JJ Monument",
+    "address": "Old Square",
+    "review":"Amazing sculpture about JJ",
+    "openingHours":"Lunes a viernes--> 11:00-22:00" 
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "CivicStructure",
+    "identifier": "2",
+    "name": "Cilvil register",
+    "address": "Main street",
+    "review":"Civil register in London",
+    "openingHours":"Sabados y domingos --> 9:00-15:00" 
+  }
+]

@@ -56,9 +56,17 @@
       });
 
       $( "#getId" ).submit(function() {
-        let id = $("#idGet").val();
+        let id;
+        if(eleccion== "python"){
+            numero = $("#idGet").val();
+            id = `?id=${numero}`;
+        }
+        else{
+            numero = $("#idGet").val();
+            id = `/${numero}`;
+        }
         $.ajax({
-            url:`${servidor}${entidad}/${id}`,
+            url:`${servidor}${entidad}${id}`,
             type: 'GET',
             contentType: "application/json",
             success: function(data) {
@@ -123,7 +131,15 @@
       });
 
       $( "#put" ).submit(function() {
-        let id = $("#idPut").val();
+        let id;
+        if(eleccion== "python"){
+            numero = $("#idPut").val();
+            id = `?id=${numero}`;
+        }
+        else{
+            numero = $("#idPut").val();
+            id = `/${numero}`;
+        }
         let name = $("#namePut").val();
         let add = $("#addressPut").val();
         let review = $("#reviewPut").val();
@@ -138,7 +154,7 @@
         };
         let datos = JSON.stringify(dat);
         $.ajax({
-            url:`${servidor}acomodacion/${id}`,
+            url:`${servidor}acomodacion${id}`,
             type: 'PUT',
             contentType: "application/json",
             data:datos,
@@ -149,7 +165,15 @@
       });
 
       $( "#putCiv" ).submit(function() {
-        let id = $("#idPutCiv").val();
+        let id;
+        if(eleccion== "python"){
+            numero = $("#idPutCiv").val();
+            id = `?id=${numero}`;
+        }
+        else{
+            numero = $("#idPutCiv").val();
+            id = `/${numero}`;
+        }
         let name = $("#namePutCiv").val();
         let add = $("#addressPutCiv").val();
         let review = $("#reviewPutCiv").val();
@@ -162,7 +186,7 @@
         };
         let datos = JSON.stringify(dat);
         $.ajax({
-            url:`${servidor}civico/${id}`,
+            url:`${servidor}civico${id}`,
             type: 'PUT',
             contentType: "application/json",
             data:datos,
@@ -173,9 +197,17 @@
       });
 
       $( "#delId" ).submit(function() {
-          let id = $("#idDel").val();
+        let id;
+        if(eleccion== "python"){
+            numero = $("#idDel").val();
+            id = `?id=${numero}`;
+        }
+        else{
+            numero = $("#idDel").val();
+            id = `/${numero}`;
+        }
           $.ajax({
-              url:`${servidor}${entidad}/${id}`,
+              url:`${servidor}${entidad}${id}`,
               type: 'DELETE',
               contentType: "application/json",
               success: function(data) {
