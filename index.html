@@ -3,91 +3,351 @@
 <head>
 <meta charset="UTF-8">
 <head>
-    <title>POO</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.8.7, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
+  <meta name="description" content="">
+  <title>Home</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
 </head>
 
 <body>
-    <div id="divServidor">
 
-        <select id="servidor">
-         <option selected="true" disabled="disabled">Seleccione un servidor</option>
-         <option value="node">Servidor Node</option>
-         <option value="php">Servidor PHP</option>
-         <option value="python">Servidor Python</option>
-        </select>
-        <button id="contactoBut">Contacto</button>
-    </div>
+  <section class="mbr-section content5 cid-rb6RAarKqX mbr-parallax-background" id="content5-7">
+
+  		<div class="container">
+  			<div class="media-container-row">
+  				<div class="title col-12 col-md-8">
+  					<h2
+  						class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">Programación orientada a objetos</h2>
+              <div id="divServidor">
+
+                  <select id="servidor" class="form-control">
+                   <option selected="true" disabled="disabled" >Seleccione un servidor</option>
+                   <option value="node">Servidor Node</option>
+                   <option value="php">Servidor PHP</option>
+                   <option value="python">Servidor Python</option>
+                  </select>
+                  <button id="contactoBut" class="btn btn-md btn-primary display-4">Contacto</button>
+              </div>
+
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+<br>
     <div id="divContenido">
-        
-    
-        <textarea id="area" rows="20" cols="50"></textarea>
-        <button id="getAllBut">Muestra todos</button>
-        <button id="getIdBut">Muestra por Id</button>
-        <button id="postBut">Añadir</button>
-        <button id="putBut">Modificar</button>
-        <button id="deleteBut">Eliminar</button>
-        <button id="servidorBut">Cambiar de servidor</button>
-        
-        <select id="entidad">
-            <option selected="true" disabled="disabled">Seleccione una entidad</option>
-            <option value="acomodacion">Acomodacion</option>
-            <option value="civico">Civico</option>
-        </select>
+      <div class="row">
+        <div class="col-sm-8"><textarea id="area" rows="20" cols="70" class="form-control"></textarea></div>
+        <div class="col-sm-4">
+          <select id="entidad" class="form-control">
+              <option selected="true" disabled="disabled">Seleccione una entidad</option>
+              <option value="acomodacion">Acomodacion</option>
+              <option value="civico">Civico</option>
+          </select>
+          <button id="getAllBut" class="btn btn-md btn-primary display-4">Muestra todos</button>
+          <button id="getIdBut" class="btn btn-md btn-primary display-4">Muestra por Id</button><br>
+          <button id="postBut" class="btn btn-md btn-primary display-6">Añadir</button><br>
+          <button id="putBut" class="btn btn-md btn-primary display-6">Modificar</button><br>
+          <button id="deleteBut" class="btn btn-md btn-primary display-6">Eliminar</button>
+          <button id="servidorBut" class="btn btn-md btn-primary display-6">Cambiar de servidor</button>
+        </div>
 
-        <form id="getId" onsubmit="return false">
-            <input type="number" id="idGet"><br>
-            <input type="submit" value="Submit">
+      </div>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="title col-12 col-lg-8">
+            </br>
+            <h2
+              class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">
+              Administración</h2>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="media-container-column col-lg-8" data-form-type="formoid">
+            <div data-form-alert="" hidden="">Thanks for filling out the
+              form!</div>
+
+
+
+
+        <form id="getId" onsubmit="return false" class="mbr-form" data-form-title="Mobirise Form">
+          <div class="row row-sm-offset">
+            <div class="col-md-4 multi-horizontal" data-for="name">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="name">Id</label> <input type="number"
+                  class="form-control" name="name" data-form-field="Name"
+                  id="idGet" required="required">
+              </div>
+            </div>
+           </div>
+            <input type="submit" value="Submit" class="btn btn-md btn-primary display-4">
         </form><br>
-        
-        <form id="delId" onsubmit="return false">
-            <input type="number" id="idDel"><br>
-            <input type="submit" value="Submit">
-        </form><br> 
-        
-        <form id="post" onsubmit="return false">
-            Nombre: <input type="text" id="namePost"><br>
-            Dirección: <input type="text" id="addressPost"><br>
-            Opinión: <input type="text" id="reviewPost"><br>
-            Número de habitaciones: <input type="number" id="roomsPost"><br>
-            Permite mascotas:<br>
-            <input type="radio" name="pets" value="true" id="truePost"> SI<br>
-            <input type="radio" name="pets" value="false" id="falsePost"> NO<br>
-            <input type="submit" value="Submit">
-        </form><br> 
 
-        <form id="put" onsubmit="return false">
-            Número del elemento: <input type="number" id="idPut"><br>
-            Nombre: <input type="text" id="namePut"><br>
-            Dirección: <input type="text" id="addressPut"><br>
-            Opinión: <input type="text" id="reviewPut"><br>
-            Número de habitaciones: <input type="number" id="roomsPut"><br>
-            Permite mascotas:<br>
-            <input type="radio" name="pets" value="true" id="truePut"> SI<br>
-            <input type="radio" name="pets" value="false" id="falsePut"> NO<br>
-            <input type="submit" value="Submit">
-        </form><br>  
 
-        <form id="postCiv" onsubmit="return false">
-            Nombre: <input type="text" id="namePostCiv"><br>
-            Dirección: <input type="text" id="addressPostCiv"><br>
-            Opinión: <input type="text" id="reviewPostCiv"><br>
-            Horario: <input type="text" id="timePostCiv"><br>
-            <input type="submit" value="Submit">
-        </form><br> 
+        <form id="delId" onsubmit="return false" class="mbr-form" data-form-title="Mobirise Form">
+          <div class="row row-sm-offset">
+            <div class="col-md-4 multi-horizontal" data-for="name">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="name">Id</label> <input type="number"
+                  class="form-control" name="name" data-form-field="Name"
+                  id="idDel" required="required">
+              </div>
+            </div>
+           </div>
+            <input type="submit" value="Submit" class="btn btn-md btn-primary display-4">
+        </form><br>
 
-        <form id="putCiv" onsubmit="return false">
-            Número del elemento: <input type="number" id="idPutCiv"><br>
-            Nombre: <input type="text" id="namePutCiv"><br>
-            Dirección: <input type="text" id="addressPutCiv"><br>
-            Opinión: <input type="text" id="reviewPutCiv"><br>
-            Horario: <input type="text" id="timePutCiv"><br>
-            <input type="submit" value="Submit">
-        </form><br>  
-        
-    </div>
+        <form id="post" onsubmit="return false" class="mbr-form" data-form-title="Mobirise Form">
+
+            <div class="row row-sm-offset">
+              <div class="col-md-4 multi-horizontal" data-for="name">
+                <div class="form-group">
+                  <label class="form-control-label mbr-fonts-style display-7"
+                    for="name">Nombre</label> <input type="text"
+                    class="form-control" name="name" data-form-field="Name"
+                    id="namePost" required="required">
+                </div>
+              </div>
+
+              <div class="col-md-4 multi-horizontal" data-for="name">
+                <div class="form-group">
+                  <label class="form-control-label mbr-fonts-style display-7"
+                    for="name">Dirección</label> <input type="text"
+                    class="form-control" name="name" data-form-field="Dirección"
+                    id="addressPost" required="required">
+                </div>
+              </div>
+              <div class="col-md-4 multi-horizontal" data-for="name">
+                <div class="form-group">
+                  <label class="form-control-label mbr-fonts-style display-7"
+                    for="name">Opinión</label> <input type="text"
+                    class="form-control" name="name" data-form-field="Opinión"
+                    id="reviewPost" required="required">
+                </div>
+              </div>
+
+              <div class="col-md-4 multi-horizontal" data-for="name">
+                <div class="form-group">
+                  <label class="form-control-label mbr-fonts-style display-7"
+                    for="name">Número habitaciones</label> <input type="number"
+                    class="form-control" name="name" data-form-field="Numero Habitaciones"
+                    id="roomsPost" required="required">
+                </div>
+              </div>
+Permite mascotas:
+              <div class="col-md-2 multi-horizontal" data-for="pets">
+                <div class="form-group">
+                  <label class="form-control-label mbr-fonts-style display-7"
+                    for="truePost">Si</label> <input type="radio"
+                    class="form-control" data-form-field="pets" name="pets"
+                    value="true" id="truePost">
+                </div>
+              </div>
+
+
+              <div class="col-md-2 multi-horizontal" data-for="pets">
+                <div class="form-group">
+                  <label class="form-control-label mbr-fonts-style display-7"
+                    for="falsePost">No</label> <input type="radio"
+                    class="form-control" data-form-field="pets" name="pets"
+                    value="false" id="falsePost">
+                </div>
+              </div>
+            </div>
+
+              <input type="submit" value="Submit" class="btn btn-md btn-primary display-4">
+
+         </form><br>
+
+        <form id="put" onsubmit="return false" class="mbr-form" data-form-title="Mobirise Form">
+          <div class="row row-sm-offset">
+            <div class="col-md-4 multi-horizontal" data-for="idPut">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="idPut">Número del elemento</label> <input type="number"
+                  class="form-control" name="idPut" data-form-field="idPut"
+                  id="idPut" required="required">
+              </div>
+            </div>
+            <div class="col-md-4 multi-horizontal" data-for="namePut">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="namePut">Nombre</label> <input type="text"
+                  class="form-control" name="namePut" data-form-field="namePut"
+                  id="namePut" required="required">
+              </div>
+            </div>
+            <div class="col-md-4 multi-horizontal" data-for="addressPut">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="addressPut">Dirección</label> <input type="text"
+                  class="form-control" name="addressPut" data-form-field="addressPut"
+                  id="addressPut" required="required">
+              </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="reviewPut">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="reviewPut">Opinión</label> <input type="text"
+                  class="form-control" name="reviewPut" data-form-field="reviewPut"
+                  id="reviewPut" required="required">
+              </div>
+            </div>
+
+            <div class="col-md-6 multi-horizontal" data-for="roomsPut">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="roomsPut">Número de habitaciones</label> <input type="number"
+                  class="form-control" name="roomsPut" data-form-field="roomsPut"
+                  id="roomsPut" required="required">
+              </div>
+            </div>
+
+
+            Permite mascotas:<br><br>
+                          <div class="col-md-4 multi-horizontal" data-for="pets">
+                            <div class="form-group">
+                              <label class="form-control-label mbr-fonts-style display-7"
+                                for="truePut">Si</label> <input type="radio"
+                                class="form-control" data-form-field="pets" name="pets"
+                                value="true" id="truePut">
+                            </div>
+                          </div>
+
+
+                          <div class="col-md-4 multi-horizontal" data-for="pets">
+                            <div class="form-group">
+                              <label class="form-control-label mbr-fonts-style display-7"
+                                for="falsePut">No</label> <input type="radio"
+                                class="form-control" data-form-field="pets" name="pets"
+                                value="false" id="falsePut">
+                            </div>
+                          </div>
+</div>
+
+<br><br>
+            <input type="submit" value="Submit" class="btn btn-md btn-primary display-4">
+        </form><br>
+
+        <form id="postCiv" onsubmit="return false" class="mbr-form" data-form-title="Mobirise Form">
+          <div class="row row-sm-offset">
+
+          <div class="col-md-4 multi-horizontal" data-for="namePostCiv">
+            <div class="form-group">
+              <label class="form-control-label mbr-fonts-style display-7"
+                for="namePostCiv">Nombre</label> <input type="text"
+                class="form-control" name="namePostCiv" data-form-field="namePostCiv"
+                id="namePostCiv" required="required">
+            </div>
+          </div>
+          <div class="col-md-4 multi-horizontal" data-for="addressPostCiv">
+            <div class="form-group">
+              <label class="form-control-label mbr-fonts-style display-7"
+                for="addressPostCiv">Dirección</label> <input type="text"
+                class="form-control" name="addressPostCiv" data-form-field="addressPostCiv"
+                id="addressPostCiv" required="required">
+            </div>
+          </div>
+          <div class="col-md-4 multi-horizontal" data-for="reviewPostCiv">
+            <div class="form-group">
+              <label class="form-control-label mbr-fonts-style display-7"
+                for="reviewPostCiv">Opinión</label> <input type="text"
+                class="form-control" name="reviewPostCiv" data-form-field="reviewPostCiv"
+                id="reviewPostCiv" required="required">
+            </div>
+          </div>
+          <div class="col-md-4 multi-horizontal" data-for="timePostCiv">
+            <div class="form-group">
+              <label class="form-control-label mbr-fonts-style display-7"
+                for="timePostCiv">Horario</label> <input type="text"
+                class="form-control" name="timePostCiv" data-form-field="timePostCiv"
+                id="timePostCiv" required="required">
+            </div>
+          </div>
+</div>
+
+            <input type="submit" value="Submit" class="btn btn-md btn-primary display-4">
+        </form><br>
+
+        <form id="putCiv" onsubmit="return false" class="mbr-form" data-form-title="Mobirise Form">
+          <div class="row row-sm-offset">
+            <div class="col-md-4 multi-horizontal" data-for="idPutCiv">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="idPutCiv">Número del elemento</label> <input type="number"
+                  class="form-control" name="idPutCiv" data-form-field="idPutCiv"
+                  id="idPutCiv" required="required">
+              </div>
+            </div>
+            <div class="col-md-4 multi-horizontal" data-for="namePutCiv">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="namePutCiv">Nombre</label> <input type="text"
+                  class="form-control" name="namePutCiv" data-form-field="namePutCiv"
+                  id="namePutCiv" required="required">
+              </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="addressPutCiv">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="addressPutCiv">Dirección</label> <input type="text"
+                  class="form-control" name="addressPutCiv" data-form-field="addressPutCiv"
+                  id="addressPutCiv" required="required">
+              </div>
+            </div>
+
+            <div class="col-md-4 multi-horizontal" data-for="reviewPutCiv">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="reviewPutCiv">Opinión</label> <input type="text"
+                  class="form-control" name="reviewPutCiv" data-form-field="reviewPutCiv"
+                  id="reviewPutCiv" required="required">
+              </div>
+            </div>
+            <div class="col-md-4 multi-horizontal" data-for="timePutCiv">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7"
+                  for="timePutCiv">Horario</label> <input type="text"
+                  class="form-control" name="timePutCiv" data-form-field="timePutCiv"
+                  id="timePutCiv" required="required">
+              </div>
+            </div>
+
+            <input type="submit" value="Submit" class="btn btn-md btn-primary display-4">
+        </form><br>
+
+
+
+</section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="controlador.js"></script>
+
+      <script src="assets/web/assets/jquery/jquery.min.js"></script>
+      <script src="assets/popper/popper.min.js"></script>
+      <script src="assets/tether/tether.min.js"></script>
+      <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+      <script src="assets/smoothscroll/smooth-scroll.js"></script>
+      <script src="assets/parallax/jarallax.min.js"></script>
+      <script src="assets/theme/js/script.js"></script>
 </body>
 
 </html>
