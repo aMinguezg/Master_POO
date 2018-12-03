@@ -5,16 +5,16 @@
         eleccion = $('#servidor').val();
         switch(eleccion){
             case "php":
-                servidor = "http://localhost/poo/php/";
+                servidor = "http://156.35.95.88:4000/poo/php/";
                 break;
             case "python":
-                servidor = "http://localhost:5000/";
+                servidor = "http://156.35.95.88:5000/";
                 break;
             case "node":
-                servidor = "http://localhost:3000/";
+                servidor = "http://156.35.95.88:3000/";
                 break;
             default:
-                servidor = "http://localhost:3000/";
+                servidor = "http://156.35.95.88:3000/";
         } 
         $('#divServidor').hide();
         $('#divContenido').show();
@@ -24,6 +24,8 @@
         $('#postCiv').hide();
         $('#put').hide();
         $('#putCiv').hide();
+        $('#area').val("");
+        $('#entidad').val("vacio");
     });
     
     //let entidad = $('#entidad').change().val();
@@ -58,7 +60,7 @@
                 type: 'GET',
                 contentType: "application/json",
                 success: function(data) {
-                    $('#area').val(JSON.stringify(data));
+                    $('#area').val(JSON.stringify(data, undefined, 4));
                 }
               });
         }
@@ -130,7 +132,7 @@
             type: 'GET',
             contentType: "application/json",
             success: function(data) {
-                $('#area').val(JSON.stringify(data));
+                $('#area').val(JSON.stringify(data, undefined, 4));
             }
           });
         $('#getId').hide();
@@ -161,7 +163,7 @@
               data:datos,
               
               success: function(data) {
-                $('#area').val(JSON.stringify(data));
+                $('#area').val(JSON.stringify(data, undefined, 4));
               }
         });
         $('#post').hide();
@@ -192,7 +194,7 @@
               data:datos,
               
               success: function(data) {
-                $('#area').val(JSON.stringify(data));
+                $('#area').val(JSON.stringify(data, undefined, 4));
               }
         });
         $('#postCiv').hide();
@@ -231,7 +233,7 @@
             contentType: "application/json",
             data:datos,
             success: function(data) {
-                $('#area').val(JSON.stringify(data));
+                $('#area').val(JSON.stringify(data), undefined, 4);
             }
           });
           $('#put').hide();
@@ -269,7 +271,7 @@
             contentType: "application/json",
             data:datos,
             success: function(data) {
-                $('#area').val(JSON.stringify(data));
+                $('#area').val(JSON.stringify(data, undefined, 4));
             }
           });
           $('#putCiv').hide();
@@ -295,7 +297,7 @@
               type: 'DELETE',
               contentType: "application/json",
               success: function(data) {
-                  $('#area').val(JSON.stringify(data));
+                  $('#area').val(JSON.stringify(data, undefined, 4));
               }
             });
         $('#delId').hide();

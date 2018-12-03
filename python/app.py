@@ -15,10 +15,10 @@ def serverAcomodacion():
     if request.method == 'GET':
         iden = request.args.get('id')
         if(iden is None):
-                return json.dumps(acomoda.datos,indent=4 ,ensure_ascii=False).encode('utf8')
+                return json.dumps(acomoda.datos,indent=4 ,sort_keys=True)
         else:
                 resultado = acomoda.getId(int(iden)) 
-                return json.dumps(resultado,indent=4 ,ensure_ascii=False).encode('utf8')
+                return json.dumps(resultado,indent=4 ,sort_keys=True)
 
     if request.method == 'DELETE':
         iden = request.args.get('id')
@@ -26,7 +26,7 @@ def serverAcomodacion():
                 return "Elige un id"
         else:
                 resultado = acomoda.deleteId(int(iden)) 
-                return json.dumps(resultado,indent=4 ,ensure_ascii=False).encode('utf8')
+                return json.dumps(resultado,indent=4 ,sort_keys=True)
 
     if request.method == 'POST':
         name = request.form['name']
@@ -35,7 +35,7 @@ def serverAcomodacion():
         numberOfRooms = request.form['numberOfRooms']
         petsAllowed = request.form['petsAllowed']
         resultado=acomoda.post(name,address,review,numberOfRooms,petsAllowed)
-        return json.dumps(resultado,indent=4 ,ensure_ascii=False).encode('utf8')
+        return json.dumps(resultado,indent=4 ,sort_keys=True)
     
     if request.method == 'PUT':
         iden = int(request.args.get('id'))
@@ -45,17 +45,17 @@ def serverAcomodacion():
         numberOfRooms = request.form['numberOfRooms']
         petsAllowed = request.form['petsAllowed']
         resultado=acomoda.putId(iden,name,address,review,numberOfRooms,petsAllowed)
-        return json.dumps(resultado,indent=4 ,ensure_ascii=False).encode('utf8')
+        return json.dumps(resultado,indent=4 ,sort_keys=True)
 
 @app.route('/civico', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def serverCivico():
     if request.method == 'GET':
         iden = request.args.get('id')
         if(iden is None):
-                return json.dumps(civic.datos,indent=4 ,ensure_ascii=False).encode('utf8')
+                return json.dumps(civic.datos,indent=4 ,sort_keys=True)
         else:
                 resultado = civic.getId(int(iden)) 
-                return json.dumps(resultado,indent=4 ,ensure_ascii=False).encode('utf8')
+                return json.dumps(resultado,indent=4 ,sort_keys=True)
 
     if request.method == 'DELETE':
         iden = request.args.get('id')
@@ -63,7 +63,7 @@ def serverCivico():
                 return "Elige un id"
         else:
                 resultado = civic.deleteId(int(iden)) 
-                return json.dumps(resultado,indent=4 ,ensure_ascii=False).encode('utf8')
+                return json.dumps(resultado,indent=4 ,sort_keys=True)
 
     if request.method == 'POST':
         name = request.form['name']
@@ -71,7 +71,7 @@ def serverCivico():
         review = request.form['review']
         openingHours = request.form['openingHours']
         resultado=civic.post(name,address,review,openingHours)
-        return json.dumps(resultado,indent=4 ,ensure_ascii=False).encode('utf8')
+        return json.dumps(resultado,indent=4 ,sort_keys=True)
     
     if request.method == 'PUT':
         iden = int(request.args.get('id'))
@@ -80,4 +80,4 @@ def serverCivico():
         review = request.form['review']
         openingHours = request.form['openingHours']
         resultado=civic.putId(iden,name,address,review,openingHours)
-        return json.dumps(resultado,indent=4 ,ensure_ascii=False).encode('utf8')
+        return json.dumps(resultado,indent=4 ,sort_keys=True)
